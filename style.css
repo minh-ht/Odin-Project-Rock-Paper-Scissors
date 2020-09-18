@@ -1,0 +1,300 @@
+:root {
+    --background-color: #ff7171;
+    --box-color: #ffaa71;
+    --minor-color: #6e6d6d;
+}
+
+* {
+    text-align: center;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background-color);
+    font-family: sans-serif;
+}
+
+.header {
+    margin: 50px 0px;
+}
+
+h2 {
+    text-align: center;
+}
+
+h6 {
+    text-align: center;
+}
+
+.container {
+    background-color: var(--box-color);
+    max-width: 600px;
+    height: 600px;
+    margin: auto;
+    border: 3px solid var(--minor-color);
+    border-radius: 2%;
+    overflow: hidden;
+}
+
+.score {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10%;
+    border-bottom: 2px solid var(--minor-color);
+    white-space: pre;
+}
+
+.board {
+    display: flex;
+    height: 60%;
+    flex-wrap: wrap;
+}
+
+.board img {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.playerName {
+    color: rgba(255, 0, 0, 0.6);
+    width: 50%;
+    height: 7%;
+    padding-top: 2px;
+    border-bottom: 2px solid var(--minor-color);
+    border-right: 1px solid var(--minor-color);
+}
+
+.computerName {
+    color: rgba(0, 0, 255, 0.6);
+    width: 50%;
+    height: 7%;
+    padding-top: 2px;
+    border-bottom: 2px solid var(--minor-color);
+    border-left: 1px solid var(--minor-color);
+}
+
+.playerChoice {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 93%;
+    border-bottom: 2px solid var(--minor-color);
+    border-right: 1px solid var(--minor-color);
+}
+
+.computerChoice {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 93%;
+    border-bottom: 2px solid var(--minor-color);
+    border-left: 1px solid var(--minor-color);
+}
+
+.computerChoice img {
+    transform: scaleX(-1);
+}
+
+.choices {
+    display: flex;
+    height: 30%;
+}
+
+div[data-choice="Rock"] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 33.33%;
+    height: 100%;
+    border-right: 2px solid var(--minor-color);
+}
+
+div[data-choice="Paper"] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 33.33%;
+    height: 100%;
+    border-right: 2px solid var(--minor-color);
+}
+
+div[data-choice="Scissors"] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 33.33%;
+    height: 100%;
+}
+
+[data-choice] {
+    pointer-events: none;
+    user-select: none;
+}
+
+[data-choice] img {
+    pointer-events: none;
+    max-width: 90%;
+    height: 85%;
+    padding: 15px;
+}
+
+[data-choice] span {
+    pointer-events: none;
+}
+
+.highlight {
+    background-color: blanchedalmond;
+}
+
+.highlight [data-choice] {
+    pointer-events: initial;
+}
+
+.highlight [data-choice]:hover {
+    background-color: burlywood;
+}
+
+.highlight [data-choice]:hover img {
+    transform: scale(1.2);
+}
+
+.highlight [data-choice]:hover:active img {
+    transform: scale(1);
+}
+
+button {
+    position: relative;
+    top: 30px;
+    width: 100px;
+    height: 40px;
+    background-color: rgba(175, 238, 238, 0.95);
+    border-radius: 8%;
+}
+
+.final {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 239, 0.93);
+    border-radius: 4%;
+    box-shadow: 0px 0px 15px gainsboro;
+    animation: final 1.5s;
+}
+
+.final h4 {
+    font-size: 48px;
+    color: rgba(255, 122, 122, 0.8);
+    text-shadow: 2px 2px 30px;
+    margin-top: 8px;
+    margin-bottom: 0;
+}
+
+.scoreChange {
+    color: honeydew;
+    animation: scoreChange 1s;
+}
+
+.flyingfromleft {
+    animation-name: flyingfromleft;
+    animation-duration: 1s;
+}
+
+.flyingfromright {
+    animation-name: flyingfromright;
+    animation-duration: 1s;
+}
+
+.congrats {
+    animation-name: congrats;
+    animation-duration: 1s;
+}
+
+@keyframes congrats {
+    0% {}
+
+    50% {
+        background-color: indianred;   
+    }
+
+    100% {
+        background-color: var(--box-color);
+    }
+}
+
+@keyframes scoreChange{
+    0% {
+        position: relative;
+        top: 10px;
+    }
+
+    100% {
+        position: relative;
+        top: 0px;
+    }
+}
+
+@keyframes flyingfromleft{
+    0% {
+        position: relative;
+        left: -300px;
+    }
+
+    100% {
+        position: relative;
+        left: 0px;
+    }
+}
+
+@keyframes flyingfromright{
+    0% {
+        position: relative;
+        left: 300px;
+    }
+
+    100% {
+        position: relative;
+        left: 0px;
+    }
+}
+
+@keyframes final {
+    0% {
+        top: -20%;
+    }
+
+    100% {
+        top: 50%;
+    }
+}
+
+/* mobile */
+@media only screen and (max-width: 700px) {
+
+    .header {
+        margin: 3vh 0 2vh;
+    }
+
+    h2, h6 {
+        margin: 5px 0px;
+    }
+
+    .container {
+        max-width: 90vh;
+        max-height: 80vh;
+        font-size: 2vh;
+    }
+
+    button {
+        top: 5px;
+    }
+}

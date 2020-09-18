@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Rock, Paper, Scissors the Game</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
     <meta charser="UTF-8">
     <meta name="theme-color" content="#1E90FF">
     <link rel="stylesheet" href="style.css">
@@ -13,29 +14,38 @@
       <h6>By SquirrelWine</h6>
     </div>
     <div class="container">
-      <div class="score">Score: <span>0</span></div>
-      <div class="game">
-        <div class="board">
-          <div class="playerName">playerName</div>
-          <div class="computerName">computerName</div>
-          <div class="playerChoice">an imange</div>
-          <div class="computerChoice"an imange</div>
+      <div class="score">Score (beat computer 5 times to win): <span class="scoreChange">0</span></div>
+      <div class="board">
+        <div class="playerName">Player</div>
+        <div class="computerName">Computer</div>
+        <div class="playerChoice">
+          <img class="flyingfromleft" src="300_8.png">
         </div>
-        <div class="choices">
-          <figure data-choice="Rock">
-            <img src="Rock.png">
-            <figcaption>Rock</figcaption>
-          </figure>
-          <figure data-choice="Paper">
-            <img src="Paper.png">
-            <figcaption>Paper</figcaption>
-          </figure>
-          <figure data-choice="Scissors">
-            <img src="Scissors.png">
-            <figcaption>Scissors</figcaption>
-          </figure>
+        <div class="computerChoice">
+          <img class="flyingfromright" src="300_1.png">
         </div>
-      <div>
+      </div>
+      <div class="choices">
+        <div data-choice="Rock">
+          <img src="Rock.png">
+          <span>Rock</span>
+        </div>
+        <div data-choice="Paper">
+          <img src="Paper.png">
+          <span>Paper</span>
+        </div>
+        <div data-choice="Scissors">
+          <img src="Scissors.png">
+          <span>Scissors</span>
+        </div>
+      </div>
+    </div>
+    <button>
+      Reset
+    </button>
+    <div class="final">
+      <img src="300_48.png">
+      <h4>YAY</h4>
     </div>
   </body>
 </html>
